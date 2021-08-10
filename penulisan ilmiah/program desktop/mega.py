@@ -8,7 +8,7 @@ from keras.layers import Dropout
 import matplotlib.pyplot as plt
 
 #loading train data
-X_df = pd.read_csv('dataset\BBCA.JK (3).csv')
+X_df = pd.read_csv('dataset\MEGA.JK.csv')
 X_values = X_df.iloc[:3000,-1].values
 X_train = X_values.reshape(-1, 1)
 
@@ -47,7 +47,7 @@ model.fit(features_set, labels, epochs = 100, batch_size = 32)
 
 #loading test data
 
-Y_df = pd.read_csv('dataset\BBCA.JK (3).csv')
+Y_df = pd.read_csv('dataset\MEGA.JK.csv')
 Y_values = Y_df.iloc[3001:,-1].values
 Y_test = Y_values.reshape(-1, 1)
 
@@ -71,7 +71,7 @@ true_labels_unscaled = scaler.inverse_transform(true_labels)
 plt.figure(figsize=(10,6))
 plt.plot(true_labels_unscaled, color='blue', label='Harga Saham Asli')
 plt.plot(predictions_unscaled , color='red', label='Harga Saham Prediksi')
-plt.title('Prediksi Saham Bank BCA')
+plt.title('Prediksi Saham Bank MEGA')
 plt.xlabel('Tanggal')
 plt.ylabel('Harga')
 plt.legend()
